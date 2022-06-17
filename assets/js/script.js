@@ -3,6 +3,8 @@ var generateBtn = document.querySelector("#generate");
 var passwordLength = 0;
 var withspecialCharacters = false;
 var withnumericCharacters = false;
+var withlowercaseCharacters = false;
+var withuppercaseCharacters = false;
 
 function getPasswordLength() {
   passwordLength = prompt("How many chartacters would you like your password to contain?");
@@ -20,6 +22,20 @@ function numericCharacters() {
   let text = "Click OK to confirm including numeric characters.";
    withnumericCharacters = confirm(text);
    console.log(withnumericCharacters);
+
+}
+
+function lowercaseCharacters() {
+  let text = "Click OK to confirm including lowercase characters.";
+   withlowercaseCharacters = confirm(text);
+   console.log(withlowercaseCharacters);
+
+}
+
+function uppercaseCharacters() {
+  let text = "Click OK to confirm including uppercase characters.";
+   withuppercaseCharacters = confirm(text);
+   console.log(withuppercaseCharacters);
 
 }
 
@@ -48,6 +64,8 @@ function writePassword() {
   getPasswordLength()
   specialCharacters()
   numericCharacters()
+  lowercaseCharacters()
+  uppercaseCharacters()
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
