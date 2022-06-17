@@ -7,7 +7,7 @@ var withlowercaseCharacters = false;
 var withuppercaseCharacters = false;
 
 function getPasswordLength() {
-  passwordLength = prompt("How many chartacters would you like your password to contain?");
+  passwordLength = prompt("How many characters would you like your password to contain?");
   console.log(passwordLength);
 }
 
@@ -41,22 +41,41 @@ function uppercaseCharacters() {
 
 function generatePassword() {
 
-  var characters = "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  console.log(characters);
-
+  var lowerAlphabet = "abcdefghijklmnopqrstuvwxyz"
+  var upperAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+  var specialChar = "!@#$%^&*()"
+  var numeric = "0123456789"
+  console.log(lowerAlphabet);
+  console.log(upperAlphabet);
+  console.log(specialChar);
+  console.log(numeric);
   console.log("Clicked the button");
 
-  var getPassword = (length, characters) => {
-    let password = "";
-    for (let i = 0; i < length; i++) {
-      password += characters.charAt(
-        Math.floor(Math.random() * characters.length)
-      );
-    }
-    return password;
-  };
+  var characters = ""
+  if (withspecialCharacters) {
+    characters+=specialChar
+  }
+
+  if (withnumericCharacters) {
+    characters+=numeric
+  }
+
+  if (withlowercaseCharacters) {
+    characters+=lowerAlphabet
+  }
+
+  if (withuppercaseCharacters) {
+    characters+=upperAlphabet
+  }
+
+  let password = "";
+  for (let i = 0; i < passwordLength; i++) {
+    password += characters.charAt(
+      Math.floor(Math.random() * characters.length)
+    );
+  }
  
-  return "password will go here";
+  return password;
 }
 
 // Write password to the #password input
