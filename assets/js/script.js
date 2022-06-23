@@ -17,18 +17,19 @@ function getPasswordLength() {
   while(isValid === false) {
 
     passwordLength = prompt("How many characters would you like your password to contain?");
-    
-    console.log()
+
     if(!passwordLength) { // check if passwordLength is valid
-      alert("Invalid input")
+      alert("Invalid input");
+      continue;
     }
+    
     // validate if password length is valid
-    else if (passwordLength.length < 8 || passwordLength.length > 120) {
-      alert("At least 8 characters and no more than  128 characters")
+    if ((passwordLength < 8) || (passwordLength > 120)) {
+      alert("At least 8 characters and no more than  128 characters");
+      continue;
     }
-    else {
-      isValid = true;
-    }
+
+    isValid = true;
 
   }
 
