@@ -24,7 +24,7 @@ function getPasswordLength() {
     }
     
     // validate if password length is valid
-    if ((passwordLength < 8) || (passwordLength > 120)) {
+    if ((passwordLength < 8) || (passwordLength > 128)) {
       alert("At least 8 characters and no more than  128 characters");
       continue;
     }
